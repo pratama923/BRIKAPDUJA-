@@ -1,118 +1,105 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Galeri | BRIKAPDUJA</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Galeri | BRIKAPDUJA</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
+body {
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background:#f2f2f2;
+  color:#222;
+}
 
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f2f2f2;
-      color: #222;
-    }
+/* NAVBAR */
+nav {
+  width:100%;
+  display:flex;
+  justify-content: space-around;
+  background:#fff;
+  padding:10px 0;
+  border-bottom:1px solid #ddd;
+}
+nav a {
+  flex:1;
+  text-align:center;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:600;
+  color:#b00000;
+  padding:8px 0;
+}
+nav a.active { border-bottom:3px solid #b00000; }
 
-    /* ================= NAVBAR ================= */
-    nav {
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      background: #ffffff;
-      padding: 10px 0;
-      border-bottom: 1px solid #ddd;
-    }
+/* HEADER */
+header {
+  text-align:center;
+  background:#b00000;
+  color:white;
+  padding:22px 12px;
+}
+header h1 { margin:0; font-size:22px; letter-spacing:2px; }
+header p { margin:6px 0 0; font-size:13px; }
 
-    nav a {
-      flex: 1;
-      text-align: center;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
-      color: #b00000;
-      padding: 8px 0;
-    }
+/* KONTAINER */
+.container { padding:14px; }
 
-    nav a.active {
-      border-bottom: 3px solid #b00000;
-    }
+/* ===== DRIVE IFRAME FLEXIBLE ===== */
+.drive-container {
+  display:flex;
+  justify-content:center;
+  margin-top:12px;
+  overflow:auto; /* scroll jika tinggi iframe lebih banyak */
+  max-height:700px; /* bisa diubah sesuai HP / layar */
+}
 
-    /* ================= HEADER ================= */
-    header {
-      width: 100%;
-      background: #b00000;
-      color: white;
-      text-align: center;
-      padding: 22px 12px;
-    }
+.drive-container iframe {
+  width:95%;
+  max-width:600px;
+  min-height:500px; /* minimal tetap terlihat bagus di HP */
+  border:none;
+  border-radius:10px;
+}
 
-    header h1 {
-      margin: 0;
-      font-size: 22px;
-      letter-spacing: 2px;
-    }
-
-    header p {
-      margin: 6px 0 0;
-      font-size: 13px;
-    }
-
-    /* ================= GALERI ================= */
-    .container {
-      width: 100%;
-      padding: 14px;
-    }
-
-    iframe {
-      width: 100%;
-      height: 600px;
-      border: 0;
-      border-radius: 10px;
-    }
-
-    /* ================= FOOTER ================= */
-    footer {
-      width: 100%;
-      text-align: center;
-      padding: 12px;
-      font-size: 12px;
-      color: #666;
-      background: #f2f2f2;
-    }
-  </style>
+/* FOOTER */
+footer {
+  text-align:center;
+  padding:12px;
+  font-size:12px;
+  color:#666;
+  background:#f2f2f2;
+  margin-top:12px;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-  <nav>
-    <a href="index.html">Beranda</a>
-    <a href="struktur.html">Struktur</a>
-    <a href="galeri.html" class="active">Galeri</a>
-  </nav>
+<nav>
+  <a href="index.html">Beranda</a>
+  <a href="struktur.html">Struktur</a>
+  <a href="galeri.html" class="active">Galeri</a>
+</nav>
 
-  <!-- HEADER -->
-  <header>
-    <h1>Galeri Kegiatan</h1>
-    <p>Dokumentasi Paskibra BRIKAPDUJA</p>
-  </header>
+<header>
+  <h1>Galeri Kegiatan</h1>
+  <p>Dokumentasi Paskibra BRIKAPDUJA</p>
+</header>
 
-  <!-- GALERI FOTO DARI GOOGLE DRIVE -->
-  <div class="container">
-    <iframe 
-      src="https://drive.google.com/embeddedfolderview?id=1E-A9W7e0DRb3W3oppAVQ4MICTNTve6NB#grid">
-    </iframe>
+<div class="container">
+
+  <!-- IFRAME DRIVE OTOMATIS + SCROLL -->
+  <div class="drive-container">
+    <iframe src="https://drive.google.com/embeddedfolderview?id=1E-A9W7e0DRb3W3oppAVQ4MICTNTve6NB#grid"></iframe>
   </div>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2026 BRIKAPDUJA
-  </footer>
+</div>
+
+<footer>
+  © 2026 BRIKAPDUJA
+</footer>
 
 </body>
 </html>

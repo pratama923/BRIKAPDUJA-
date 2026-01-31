@@ -1,83 +1,132 @@
-<!DOCTYPE html><html lang="id">
+<!DOCTYPE html>
+<html lang="id">
 <head>
-<meta charset="UTF-8" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Galeri | BRIKAPDUJA</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" /><style>
+
+<style>
 :root{
-  --nav-h:60px;
   --primary:#b00000;
-  --bg:#f4f6f8;
 }
 *{box-sizing:border-box}
-html,body{
-  margin:0; padding:0; height:100%;
-  font-family:"Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background:var(--bg); color:#222;
+body{
+  margin:0;
+  font-family:"Segoe UI", Roboto, Arial, sans-serif;
+  background:#fff;
+  color:#222;
 }
 
 /* NAVBAR */
 nav{
-  position:fixed; top:0; left:0; right:0;
-  height:var(--nav-h);
-  display:flex; align-items:center;
-  background:#ffffffee;
-  backdrop-filter:blur(6px);
-  border-bottom:1px solid #e0e0e0;
-  z-index:20;
+  position:fixed;
+  top:0; left:0; right:0;
+  height:60px;
+  display:flex;
+  background:#fff;
+  border-bottom:1px solid #eee;
+  z-index:10;
 }
 nav a{
   flex:1;
   text-align:center;
   text-decoration:none;
-  font-size:14px;
+  line-height:60px;
   font-weight:600;
   color:#666;
-  padding:14px 0;
-  transition:.2s;
 }
 nav a.active{
   color:var(--primary);
   border-bottom:3px solid var(--primary);
 }
-nav a:hover{color:var(--primary)}
 
-/* GALERI FULLSCREEN */
-.drive-container{
+/* ABOUT */
+.about{
+  margin-top:60px;
+  padding:24px 16px;
+  text-align:center;
+}
+.about h1{
+  margin:0 0 8px;
+  font-size:22px;
+}
+.about p{
+  margin:0 auto;
+  max-width:720px;
+  font-size:14px;
+  color:#555;
+  line-height:1.6;
+}
+
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(140px, 1fr));
+  gap:4px;
+  padding:4px;
+}
+.gallery img{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  cursor:pointer;
+}
+
+/* FULLSCREEN VIEWER */
+.viewer{
   position:fixed;
-  top:var(--nav-h);
-  left:0; right:0; bottom:0;
-  width:100vw;
-  height:calc(100dvh - var(--nav-h));
-  background:#000; /* kesan profesional */
-}
-
-.drive-container iframe{
-  width:100vw;
-  height:100%;
-  border:0;
-}
-
-/* LOADING PLACEHOLDER */
-.loading{
-  position:absolute;
   inset:0;
-  display:flex;
+  background:#000;
+  display:none;
   align-items:center;
   justify-content:center;
-  color:#aaa;
-  font-size:14px;
-  letter-spacing:1px;
+  z-index:99;
 }
-</style></head><body><nav>
+.viewer img{
+  max-width:100%;
+  max-height:100%;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
   <a href="index.html">Beranda</a>
   <a href="struktur.html">Struktur</a>
   <a href="galeri.html" class="active">Galeri</a>
-</nav><div class="drive-container">
-  <div class="loading">MEMUAT GALERI…</div>
-  <iframe 
-    src="https://drive.google.com/embeddedfolderview?id=1E-A9W7e0DRb3W3oppAVQ4MICTNTve6NB#grid"
-    loading="lazy"
-    onload="this.previousElementSibling.style.display='none'"
-  ></iframe>
-</div></body>
+</nav>
+
+<section class="about">
+  <h1>Tentang Kami</h1>
+  <p>Galeri dokumentasi kegiatan BRIKAPDUJA. Seluruh foto tersinkron otomatis dari Google Drive.</p>
+</section>
+
+<div class="gallery" id="gallery"></div>
+
+<div class="viewer" id="viewer" onclick="this.style.display='none'">
+  <img id="viewerImg">
+</div>
+
+<script>
+const API_KEY = "AIzaSyAr5tgoX9c8fnjhuqhcK3EBzW_w3n_mb7A";
+const FOLDER_ID = "1E-A9W7e0DRb3W3oppAVQ4MICTNTve6NB";
+
+fetch(`https://www.googleapis.com/drive/v3/files?q='${FOLDER_ID}'+in+parents+and+mimeType+contains+'image/'&fields=files(id)&key=${API_KEY}`)
+.then(res => res.json())
+.then(data => {
+  const galeri = document.getElementById("gallery");
+  data.files.forEach(file => {
+    const img = document.createElement("img");
+    img.src = `https://drive.google.com/uc?id=${file.id}`;
+    img.onclick = () => {
+      document.getElementById("viewerImg").src = img.src;
+      document.getElementById("viewer").style.display = "flex";
+    };
+    galeri.appendChild(img);
+  });
+});
+</script>
+
+</body>
 </html>

@@ -2,148 +2,177 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Struktur Organisasi Angkatan 8</title>
+  <title>Struktur | BRIKAPDUJA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: #f4f4f4;
+      background: #f2f2f2;
       color: #222;
     }
 
+    /* NAVBAR */
+    nav {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background: #ffffff;
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav a {
+      flex: 1;
+      text-align: center;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      color: #b00000;
+      padding: 8px 0;
+    }
+
+    nav a.active {
+      border-bottom: 3px solid #b00000;
+    }
+
+    /* HEADER */
     header {
-      background: linear-gradient(90deg, #b00000, #ff0000);
+      width: 100%;
+      background: #b00000;
       color: white;
       text-align: center;
-      padding: 25px 15px;
+      padding: 22px 12px;
     }
 
     header h1 {
       margin: 0;
-      font-size: 24px;
-      letter-spacing: 1px;
+      font-size: 22px;
+      letter-spacing: 2px;
     }
 
+    header p {
+      margin: 6px 0 0;
+      font-size: 13px;
+    }
+
+    /* KONTEN STRUKTUR */
     .container {
-      padding: 20px;
+      padding: 14px;
     }
 
     .card {
-      background: white;
-      border-radius: 14px;
-      padding: 18px;
-      margin-bottom: 14px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      width: 100%;
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 12px;
     }
 
     .card h2 {
       margin-top: 0;
+      margin-bottom: 6px;
+      font-size: 16px;
       color: #b00000;
-      font-size: 18px;
     }
 
-    .jabatan {
-      font-weight: bold;
-      margin-top: 10px;
+    .card p {
+      font-size: 14px;
+      line-height: 1.5;
     }
 
-    .nama {
-      margin-left: 12px;
-    }
-
-    a {
-      display: inline-block;
-      margin-top: 10px;
-      text-decoration: none;
-      color: #b00000;
-      font-weight: bold;
-    }
-
+    /* FOOTER */
     footer {
+      width: 100%;
       text-align: center;
-      padding: 15px;
-      font-size: 13px;
-      color: #777;
+      padding: 12px;
+      font-size: 12px;
+      color: #666;
+      background: #f2f2f2;
     }
   </style>
 </head>
 
 <body>
+
+  <!-- NAVBAR -->
   <nav>
-  <a href="index.html">Beranda</a>
-  <a href="struktur.html">Struktur</a>
-  <a href="galeri.html">Galeri</a>
+    <a href="index.html">Beranda</a>
+    <a href="struktur.html" class="active">Struktur</a>
+    <a href="galeri.html">Galeri</a>
   </nav>
 
-<header>
-  <h1>Struktur Organisasi<br>Angkatan 8</h1>
-</header>
+  <!-- HEADER -->
+  <header>
+    <h1>Struktur Organisasi</h1>
+    <p>Angkatan 8 • Paskibra BRIKAPDUJA</p>
+  </header>
 
-<div class="container">
+  <!-- KONTEN STRUKTUR -->
+  <div class="container">
 
-  <div class="card">
-    <h2>Pengurus Inti</h2>
+    <div class="card">
+      <h2>KETUA UMUM</h2>
+      <p>Rendi Setiawan</p>
+    </div>
 
-    <div class="jabatan">Ketua Umum</div>
-    <div class="nama">Rendi Setiawan</div>
+    <div class="card">
+      <h2>KETUA 1 PUTRA</h2>
+      <p>Ahsan Shidqi Abdillah</p>
+    </div>
 
-    <div class="jabatan">Ketua 1 Putra</div>
-    <div class="nama">Ahsan Shidqi Abdillah</div>
+    <div class="card">
+      <h2>KETUA 2 PUTRI</h2>
+      <p>Dhavani R. Imaduddin</p>
+    </div>
 
-    <div class="jabatan">Ketua 2 Putri</div>
-    <div class="nama">Dhavani R. Imaduddin</div>
+    <div class="card">
+      <h2>DEWAN KEDISIPLINAN</h2>
+      <p>Kania Dewi Siti Rahayu<br>Asmi Sri Mulyani</p>
+    </div>
+
+    <div class="card">
+      <h2>SEKRETARIS UMUM</h2>
+      <p>Dhavina R. Imaduddin<br>Nova Aena</p>
+    </div>
+
+    <div class="card">
+      <h2>BENDAHARA UMUM</h2>
+      <p>Novi Aeni<br>Nabila Yulviana</p>
+    </div>
+
+    <div class="card">
+      <h2>BINLAT & PENUGASAN</h2>
+      <p>Kania Dewi</p>
+    </div>
+
+    <div class="card">
+      <h2>DANA DAN USAHA</h2>
+      <p>Tia Widianty<br>Dian Sopian</p>
+    </div>
+
+    <div class="card">
+      <h2>INVENTARIS & KESEKRETARIATAN</h2>
+      <p>Putra Zian Pratama<br>Arsyil Muslim</p>
+    </div>
+
+    <div class="card">
+      <h2>KREATIF DAN SOSMED</h2>
+      <p>Febie Cantika Priani<br>Aqila Fikri Hendarsyah</p>
+    </div>
+
   </div>
 
-  <div class="card">
-    <h2>Dewan Kedisiplinan</h2>
-    <div class="nama">Kania Dewi Siti Rahayu</div>
-    <div class="nama">Asmi Sri Mulyani</div>
-  </div>
-
-  <div class="card">
-    <h2>Sekretaris Umum</h2>
-    <div class="nama">Dhavina R. Imaduddin</div>
-    <div class="nama">Nova Aena</div>
-  </div>
-
-  <div class="card">
-    <h2>Bendahara Umum</h2>
-    <div class="nama">Novi Aeni</div>
-    <div class="nama">Nabila Yulviana</div>
-  </div>
-
-  <div class="card">
-    <h2>Binlat & Penugasan</h2>
-    <div class="nama">Kania Dewi</div>
-  </div>
-
-  <div class="card">
-    <h2>Dana dan Usaha</h2>
-    <div class="nama">Tia Widianty</div>
-    <div class="nama">Dian Sopian</div>
-  </div>
-
-  <div class="card">
-    <h2>Inventaris & Kesekertariatan</h2>
-    <div class="nama">Putra Zian Pratama</div>
-    <div class="nama">Arsyil Muslim</div>
-  </div>
-
-  <div class="card">
-    <h2>Kreatif dan Sosial Media</h2>
-    <div class="nama">Febie Cantika Priani</div>
-    <div class="nama">Aqila Fikri Hendarsyah</div>
-  </div>
-
-  <a href="index.html">← Kembali ke Beranda</a>
-
-</div>
-
-<footer>
-  © 2026 BRIKAPDUJA • Angkatan 8
-</footer>
+  <!-- FOOTER -->
+  <footer>
+    © 2026 BRIKAPDUJA
+  </footer>
 
 </body>
 </html>

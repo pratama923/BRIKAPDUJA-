@@ -5,99 +5,99 @@
   <title>BRIKAPDUJA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #0f0f0f;
-  color: #eaeaea;
+  <style>:
+    * {
+  box-sizing: border-box;
 }
 
-/* NAVBAR */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f2f2f2;
+  color: #222;
+}
+
+/* ================= NAVBAR ================= */
 nav {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  gap: 10px;
-  background: #111;
-  padding: 12px;
-  border-bottom: 2px solid #b00000;
+  background: #ffffff;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
 }
 
 nav a {
-  min-width: 95px;
+  flex: 1;
   text-align: center;
   text-decoration: none;
   font-size: 14px;
-  font-weight: 700;
-  color: #eaeaea;
+  font-weight: 600;
+  color: #b00000;
   padding: 8px 0;
-  border-radius: 20px;
-  transition: 0.25s ease;
 }
 
-nav a:hover,
 nav a.active {
-  background: #b00000;
-  color: #ffffff;
+  border-bottom: 3px solid #b00000;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 header {
-  background: linear-gradient(135deg, #000000, #b00000);
+  width: 100%;
+  background: #b00000;
   color: white;
   text-align: center;
-  padding: 35px 15px;
+  padding: 24px 12px;
 }
 
 header h1 {
   margin: 0;
-  font-size: 28px;
-  letter-spacing: 3px;
+  font-size: 22px;
+  letter-spacing: 2px;
 }
 
 header p {
-  margin-top: 10px;
-  font-size: 14px;
-  opacity: 0.9;
+  margin: 6px 0 0;
+  font-size: 13px;
 }
 
-/* CONTENT */
+/* ================= CONTENT ================= */
 .container {
-  padding: 20px;
+  width: 100%;
+  padding: 14px;
 }
 
 .card {
-  background: #151515;
-  border-radius: 14px;
-  padding: 18px;
-  margin-bottom: 16px;
-  border-left: 4px solid #b00000;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.6);
+  width: 100%;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 12px;
 }
 
 .card h2 {
   margin-top: 0;
-  margin-bottom: 8px;
-  color: #ff3b3b;
-  font-size: 18px;
+  margin-bottom: 6px;
+  font-size: 16px;
+  color: #b00000;
 }
 
 .card p {
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 footer {
+  width: 100%;
   text-align: center;
-  padding: 15px;
+  padding: 12px;
   font-size: 12px;
-  color: #888;
-  border-top: 1px solid #222;
+  color: #666;
+  background: #f2f2f2;
 }
+
   </style>
 </head>
 

@@ -5,151 +5,148 @@
   <title>BRIKAPDUJA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>:
+  <style>
     * {
-  box-sizing: border-box;
-}
+      box-sizing: border-box;
+    }
 
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f2f2f2;
-  color: #222;
-}
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f2f2f2;
+      color: #222;
+    }
 
-/* ================= NAVBAR ================= */
-nav {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background: #ffffff;
-  padding: 10px 0;
-  border-bottom: 1px solid #ddd;
-}
+    /* NAVBAR */
+    nav {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background: #ffffff;
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
 
-nav a {
-  flex: 1;
-  text-align: center;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 600;
-  color: #b00000;
-  padding: 8px 0;
-}
+    nav a {
+      flex: 1;
+      text-align: center;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      color: #b00000;
+      padding: 8px 0;
+    }
 
-nav a.active {
-  border-bottom: 3px solid #b00000;
-}
+    nav a.active {
+      border-bottom: 3px solid #b00000;
+    }
 
-/* ================= HEADER ================= */
-header {
-  width: 100%;
-  background: #b00000;
-  color: white;
-  text-align: center;
-  padding: 24px 12px;
-}
+    /* HEADER */
+    header {
+      width: 100%;
+      background: #b00000;
+      color: white;
+      text-align: center;
+      padding: 24px 12px;
+    }
 
-header h1 {
-  margin: 0;
-  font-size: 22px;
-  letter-spacing: 2px;
-}
+    header img {
+      width: 80px;
+      height: auto;
+      margin-bottom: 10px;
+    }
 
-header p {
-  margin: 6px 0 0;
-  font-size: 13px;
-}
+    header h1 {
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: 2px;
+    }
 
-/* ================= CONTENT ================= */
-.container {
-  width: 100%;
-  padding: 14px;
-}
+    header p {
+      margin: 6px 0 0;
+      font-size: 13px;
+    }
 
-.card {
-  width: 100%;
-  background: #ffffff;
-  border-radius: 10px;
-  padding: 14px;
-  margin-bottom: 12px;
-}
+    /* CONTENT */
+    .container {
+      width: 100%;
+      padding: 14px;
+    }
 
-.card h2 {
-  margin-top: 0;
-  margin-bottom: 6px;
-  font-size: 16px;
-  color: #b00000;
-}
+    .card {
+      width: 100%;
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 12px;
+    }
 
-.card p {
-  font-size: 14px;
-  line-height: 1.5;
-}
+    .card h2 {
+      margin-top: 0;
+      margin-bottom: 6px;
+      font-size: 16px;
+      color: #b00000;
+    }
 
-/* ================= FOOTER ================= */
-footer {
-  width: 100%;
-  text-align: center;
-  padding: 12px;
-  font-size: 12px;
-  color: #666;
-  background: #f2f2f2;
-}
+    .card p {
+      font-size: 14px;
+      line-height: 1.5;
+    }
 
+    /* FOOTER */
+    footer {
+      width: 100%;
+      text-align: center;
+      padding: 12px;
+      font-size: 12px;
+      color: #666;
+      background: #f2f2f2;
+    }
   </style>
 </head>
 
 <body>
+
+  <!-- NAVBAR -->
   <nav>
-  <a href="index.html">Beranda</a>
-  <a href="struktur.html">Struktur</a>
-  <a href="galeri.html">Galeri</a>
+    <a href="index.html" class="active">Beranda</a>
+    <a href="struktur.html">Struktur</a>
+    <a href="galeri.html">Galeri</a>
   </nav>
 
-<header>
-  <!-- GANTI logo.png dengan nama file logo kamu -->
-  <img src="IMG_20260131_154912.png" alt="Logo BRIKAPDUJA" class="logo">
+  <!-- HEADER -->
+  <header>
+    <img src="IMG_20260131_154912.png" alt="Logo BRIKAPDUJA">
+    <h1>BRIKAPDUJA</h1>
+    <p>Brigade Kp Dua Jaya</p>
+  </header>
 
-  <h1>BRIKAPDUJA</h1>
-  <p>Pasukan Pengibar Bendera Sekolah</p>
-</header>
+  <!-- KONTEN -->
+  <div class="container">
+    <div class="card">
+      <h2>Selamat Datang</h2>
+      <p>
+        Website resmi Paskibra <b>BRIKAPDUJA</b>.
+        Website ini digunakan sebagai media informasi,
+        dokumentasi kegiatan, dan struktur organisasi.
+      </p>
+    </div>
 
-<div class="container">
-
-  <div class="card">
-    <h2>Tentang Kami</h2>
-    <p>
-      BRIKAPDUJA adalah organisasi Pasukan Pengibar Bendera
-      yang berfokus pada pembinaan disiplin, tanggung jawab,
-      kepemimpinan, dan semangat nasionalisme.
-    </p>
+    <div class="card">
+      <h2>Tentang Kami</h2>
+      <p>
+        BRIKAPDUJA adalah organisasi Pasukan Pengibar Bendera
+        yang menjunjung tinggi disiplin, tanggung jawab,
+        kepemimpinan, dan nasionalisme.
+      </p>
+    </div>
   </div>
 
-  <div class="card">
-    <h2>Visi</h2>
-    <p>
-      Membentuk anggota Paskibra yang disiplin, berkarakter,
-      berjiwa patriot, dan menjadi teladan di lingkungan sekolah.
-    </p>
-  </div>
-
-  <div class="card">
-    <h2>Misi</h2>
-    <ul>
-      <li>Meningkatkan kedisiplinan dan kekompakan anggota</li>
-      <li>Menanamkan rasa cinta tanah air</li>
-      <li>Melatih kepemimpinan dan tanggung jawab</li>
-      <li>Menjaga nama baik sekolah</li>
-    </ul>
-  </div>
-
-</div>
-
-<footer>
-  © 2026 BRIKAPDUJA • Paskibra Sekolah
-</footer>
+  <!-- FOOTER -->
+  <footer>
+    © 2026 BRIKAPDUJA • Paskibra Sekolah
+  </footer>
 
 </body>
 </html>

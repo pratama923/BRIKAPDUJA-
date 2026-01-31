@@ -1,132 +1,50 @@
-<!DOCTYPE html>
-<html lang="id">
+<!DOCTYPE html><html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Galeri | BRIKAPDUJA</title>
-
-<style>
-:root{
-  --primary:#b00000;
-}
+<title>Galeri | BRIKAPDUJA</title><style>
+:root{--primary:#b00000;}
 *{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:"Segoe UI", Roboto, Arial, sans-serif;
-  background:#fff;
-  color:#222;
-}
-
-/* NAVBAR */
-nav{
-  position:fixed;
-  top:0; left:0; right:0;
-  height:60px;
-  display:flex;
-  background:#fff;
-  border-bottom:1px solid #eee;
-  z-index:10;
-}
-nav a{
-  flex:1;
-  text-align:center;
-  text-decoration:none;
-  line-height:60px;
-  font-weight:600;
-  color:#666;
-}
-nav a.active{
-  color:var(--primary);
-  border-bottom:3px solid var(--primary);
-}
-
-/* ABOUT */
-.about{
-  margin-top:60px;
-  padding:24px 16px;
-  text-align:center;
-}
-.about h1{
-  margin:0 0 8px;
-  font-size:22px;
-}
-.about p{
-  margin:0 auto;
-  max-width:720px;
-  font-size:14px;
-  color:#555;
-  line-height:1.6;
-}
-
-/* GALLERY */
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(auto-fill, minmax(140px, 1fr));
-  gap:4px;
-  padding:4px;
-}
-.gallery img{
-  width:100%;
-  aspect-ratio:1/1;
-  object-fit:cover;
-  cursor:pointer;
-}
-
-/* FULLSCREEN VIEWER */
-.viewer{
-  position:fixed;
-  inset:0;
-  background:#000;
-  display:none;
-  align-items:center;
-  justify-content:center;
-  z-index:99;
-}
-.viewer img{
-  max-width:100%;
-  max-height:100%;
-}
-</style>
-</head>
-
-<body>
-
-<nav>
+body{margin:0;font-family:"Segoe UI", Roboto, Arial, sans-serif;background:#fff;color:#222;}
+nav{position:fixed;top:0;left:0;right:0;height:60px;display:flex;background:#fff;border-bottom:1px solid #eee;z-index:10;}
+nav a{flex:1;text-align:center;text-decoration:none;line-height:60px;font-weight:600;color:#666;}
+nav a.active{color:var(--primary);border-bottom:3px solid var(--primary);}
+.about{margin-top:60px;padding:24px 16px;text-align:center;}
+.about h1{margin:0 0 8px;font-size:22px;}
+.about p{margin:0 auto;max-width:720px;font-size:14px;color:#555;line-height:1.6;}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:4px;padding:4px;}
+.gallery img{width:100%;aspect-ratio:1/1;object-fit:cover;cursor:pointer;}
+.viewer{position:fixed;inset:0;background:#000;display:none;align-items:center;justify-content:center;z-index:99;}
+.viewer img{max-width:100%;max-height:100%;}
+</style></head>
+<body><nav>
   <a href="index.html">Beranda</a>
   <a href="struktur.html">Struktur</a>
   <a href="galeri.html" class="active">Galeri</a>
-</nav>
-
-<section class="about">
+</nav><section class="about">
   <h1>Tentang Kami</h1>
   <p>Galeri dokumentasi kegiatan BRIKAPDUJA. Seluruh foto tersinkron otomatis dari Google Drive.</p>
-</section>
-
-<div class="gallery" id="gallery"></div>
-
-<div class="viewer" id="viewer" onclick="this.style.display='none'">
-  <img id="viewerImg">
-</div>
-
-<script>
+</section><div class="gallery" id="gallery"></div>
+<div class="viewer" id="viewer" onclick="this.style.display='none'"><img id="viewerImg"></div><script>
 const API_KEY = "AIzaSyAr5tgoX9c8fnjhuqhcK3EBzW_w3n_mb7A";
 const FOLDER_ID = "1E-A9W7e0DRb3W3oppAVQ4MICTNTve6NB";
 
-fetch(`https://www.googleapis.com/drive/v3/files?q='${FOLDER_ID}'+in+parents+and+mimeType+contains+'image/'&fields=files(id)&key=${API_KEY}`)
+fetch(`https://www.googleapis.com/drive/v3/files?q='${FOLDER_ID}'+in+parents+and+mimeType contains 'image/'&fields=files(id)&key=${API_KEY}`)
 .then(res => res.json())
 .then(data => {
   const galeri = document.getElementById("gallery");
   data.files.forEach(file => {
-    const img = document.createElement("img");
-    img.src = `https://drive.google.com/uc?id=${file.id}`;
-    img.onclick = () => {
-      document.getElementById("viewerImg").src = img.src;
-      document.getElementById("viewer").style.display = "flex";
-    };
-    galeri.appendChild(img);
+    // hanya ambil file dengan extension jpg, jpeg, png
+    if(file.name.match(/\.(jpg|jpeg|png)$/i)){
+      const img = document.createElement("img");
+      img.src = `https://drive.google.com/uc?id=${file.id}`;
+      img.onclick = () => {
+        document.getElementById("viewerImg").src = img.src;
+        document.getElementById("viewer").style.display = "flex";
+      };
+      galeri.appendChild(img);
+    }
   });
 });
-</script>
-
-</body>
+</script></body>
 </html>

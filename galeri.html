@@ -1,43 +1,40 @@
-<!DOCTYPE html>
-<html lang="id">
+<!DOCTYPE html><html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Galeri | BRIKAPDUJA</title>
 <style>
-body{margin:0;font-family:Arial,sans-serif;background:#fff;}
-.about{padding:24px;text-align:center;}
-.about h1{margin:0 0 8px;}
-.about p{margin:0 0 16px;color:#555;}
+body{margin:0;font-family:Arial,sans-serif;background:#fff;color:#222;}
+nav{position:fixed;top:0;left:0;right:0;height:60px;display:flex;background:#fff;border-bottom:1px solid #ddd;z-index:9999;}
+nav a{flex:1;text-align:center;line-height:60px;text-decoration:none;font-weight:600;font-size:16px;color:#b00000;}
+nav a.active{border-bottom:3px solid #b00000;}
+.about{margin-top:60px;padding:24px;text-align:center;}
+.about h1{margin:0 0 8px;font-size:22px;}
+.about p{margin:0 auto;max-width:720px;font-size:14px;color:#555;line-height:1.6;}
 .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:4px;padding:4px;}
 .gallery img{width:100%;aspect-ratio:1/1;object-fit:cover;cursor:pointer;}
-.viewer{position:fixed;inset:0;background:#000;display:none;align-items:center;justify-content:center;z-index:99;}
+.viewer{position:fixed;inset:0;background:#000;display:none;align-items:center;justify-content:center;z-index:9999;}
 .viewer img{max-width:100%;max-height:100%;}
 </style>
 </head>
-<body>
-
-<section class="about">
-<h1>Tentang Kami</h1>
-<p>Galeri dokumentasi BRIKAPDUJA. Foto otomatis dari Google Drive.</p>
-</section>
-
-<div class="gallery" id="gallery"></div>
-<div class="viewer" id="viewer" onclick="this.style.display='none'">
-  <img id="viewerImg">
-</div>
-
-<script>
+<body><nav>
+  <a href="index.html">Beranda</a>
+  <a href="struktur.html">Struktur</a>
+  <a href="galeri.html" class="active">Galeri</a>
+</nav><section class="about">
+  <h1>Tentang Kami</h1>
+  <p>Galeri dokumentasi BRIKAPDUJA. Seluruh foto tersinkron otomatis dari Google Drive.</p>
+</section><div class="gallery" id="gallery"></div>
+<div class="viewer" id="viewer" onclick="this.style.display='none'"><img id="viewerImg"></div><script>
 const API_KEY = "AIzaSyAr5tgoX9c8fnjhuqhcK3EBzW_w3n_mb7A";
 const FOLDER_ID = "1E-A9W7e0DRb3W3oppAVQ4MICTNTve6NB";
 
-// request semua file di folder, tanpa filter terlalu ketat
 fetch(`https://www.googleapis.com/drive/v3/files?q='${FOLDER_ID}'+in+parents&fields=files(id,name,mimeType)&key=${API_KEY}`)
 .then(res => res.json())
 .then(data => {
   const galeri = document.getElementById("gallery");
   data.files.forEach(file => {
-    if(file.mimeType.startsWith("image/")) { // hanya ambil gambar
+    if(file.mimeType.startsWith("image/")) {
       const img = document.createElement("img");
       img.src = `https://drive.google.com/uc?id=${file.id}`;
       img.alt = file.name;
@@ -50,7 +47,5 @@ fetch(`https://www.googleapis.com/drive/v3/files?q='${FOLDER_ID}'+in+parents&fie
   });
 })
 .catch(err => console.error("Error load gallery:", err));
-</script>
-
-</body>
+</script></body>
 </html>

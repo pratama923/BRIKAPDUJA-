@@ -4,13 +4,15 @@
 <title>Galeri | BRIKAPDUJA</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" /><style>
 :root{
-  --nav-h:56px;
+  --nav-h:60px;
+  --primary:#b00000;
+  --bg:#f4f6f8;
 }
 *{box-sizing:border-box}
 html,body{
   margin:0; padding:0; height:100%;
-  font-family:Arial, Helvetica, sans-serif;
-  background:#f2f2f2; color:#222;
+  font-family:"Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background:var(--bg); color:#222;
 }
 
 /* NAVBAR */
@@ -18,41 +20,64 @@ nav{
   position:fixed; top:0; left:0; right:0;
   height:var(--nav-h);
   display:flex; align-items:center;
-  background:#fff; border-bottom:1px solid #ddd;
+  background:#ffffffee;
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid #e0e0e0;
   z-index:20;
 }
 nav a{
-  flex:1; text-align:center; text-decoration:none;
-  font-size:14px; font-weight:600; color:#b00000;
-  padding:10px 0;
+  flex:1;
+  text-align:center;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:600;
+  color:#666;
+  padding:14px 0;
+  transition:.2s;
 }
-nav a.active{border-bottom:3px solid #b00000}
+nav a.active{
+  color:var(--primary);
+  border-bottom:3px solid var(--primary);
+}
+nav a:hover{color:var(--primary)}
 
-/* KONTAINER IFRAME FULLSCREEN */
+/* GALERI FULLSCREEN */
 .drive-container{
   position:fixed;
   top:var(--nav-h);
   left:0; right:0; bottom:0;
-  width:100vw; height:calc(100dvh - var(--nav-h));
-  background:#fff;
-}
-.drive-container iframe{
-  width:100%; height:100%; border:0;
+  width:100vw;
+  height:calc(100dvh - var(--nav-h));
+  background:#000; /* kesan profesional */
 }
 
-/* FOOTER (opsional, non-overlap) */
-footer{
-  display:none; /* aktifkan jika perlu */
+.drive-container iframe{
+  width:100vw;
+  height:100%;
+  border:0;
+}
+
+/* LOADING PLACEHOLDER */
+.loading{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#aaa;
+  font-size:14px;
+  letter-spacing:1px;
 }
 </style></head><body><nav>
   <a href="index.html">Beranda</a>
   <a href="struktur.html">Struktur</a>
   <a href="galeri.html" class="active">Galeri</a>
 </nav><div class="drive-container">
+  <div class="loading">MEMUAT GALERI…</div>
   <iframe 
     src="https://drive.google.com/embeddedfolderview?id=1E-A9W7e0DRb3W3oppAVQ4MICTNTve6NB#grid"
     loading="lazy"
-    referrerpolicy="no-referrer"
+    onload="this.previousElementSibling.style.display='none'"
   ></iframe>
 </div></body>
 </html>

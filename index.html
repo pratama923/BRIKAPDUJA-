@@ -6,9 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -38,9 +36,7 @@
       padding: 8px 0;
     }
 
-    nav a.active {
-      border-bottom: 3px solid #b00000;
-    }
+    nav a.active { border-bottom: 3px solid #b00000; }
 
     /* HEADER */
     header {
@@ -51,28 +47,14 @@
       padding: 24px 12px;
     }
 
-    header img {
-      width: 80px;
-      height: auto;
-      margin-bottom: 10px;
-    }
+    header img { width: 80px; height: auto; margin-bottom: 10px; }
 
-    header h1 {
-      margin: 0;
-      font-size: 22px;
-      letter-spacing: 2px;
-    }
+    header h1 { margin: 0; font-size: 22px; letter-spacing: 2px; }
 
-    header p {
-      margin: 6px 0 0;
-      font-size: 13px;
-    }
+    header p { margin: 6px 0 0; font-size: 13px; }
 
     /* CONTENT */
-    .container {
-      width: 100%;
-      padding: 14px;
-    }
+    .container { width: 100%; padding: 14px; }
 
     .card {
       width: 100%;
@@ -82,17 +64,30 @@
       margin-bottom: 12px;
     }
 
-    .card h2 {
-      margin-top: 0;
-      margin-bottom: 6px;
-      font-size: 16px;
-      color: #b00000;
+    .card h2 { margin-top: 0; margin-bottom: 6px; font-size: 16px; color: #b00000; }
+
+    .card p { font-size: 14px; line-height: 1.5; }
+
+    /* MEDSOS VISUAL */
+    .medsos {
+      display: flex;
+      justify-content: space-around;
+      background: #fff;
+      border-radius: 10px;
+      padding: 12px;
+      margin-top: 12px;
     }
 
-    .card p {
-      font-size: 14px;
-      line-height: 1.5;
+    .medsos a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: #b00000;
+      font-size: 12px;
     }
+
+    .medsos img { width: 32px; height: 32px; margin-bottom: 4px; }
 
     /* FOOTER */
     footer {
@@ -119,7 +114,7 @@
   <header>
     <img src="IMG_20260131_154912.png" alt="Logo BRIKAPDUJA">
     <h1>BRIKAPDUJA</h1>
-    <p>Brigade Kp Dua Jaya</p>
+    <p>BIRGADE KP DUA JAYA</p>
   </header>
 
   <!-- KONTEN -->
@@ -131,6 +126,22 @@
         Website ini digunakan sebagai media informasi,
         dokumentasi kegiatan, dan struktur organisasi.
       </p>
+    </div>
+
+    <!-- MEDSOS VISUAL -->
+    <div class="medsos">
+      <a href="#" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/841/841364.png" alt="Website">
+        <span>Website</span>
+      </a>
+      <a href="https://www.tiktok.com/@paskibrasmakp2ciparay_" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046123.png" alt="TikTok">
+        <span>TikTok</span>
+      </a>
+      <a href="https://www.instagram.com/BRIKAPDUJA" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+        <span>Instagram</span>
+      </a>
     </div>
 
     <div class="card">

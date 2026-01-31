@@ -5,107 +5,129 @@
   <title>BRIKAPDUJA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f4f4f4;
-}
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f4f4;
+      color: #222;
+    }
 
-nav {
-  position: sticky;
-  top: 0;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  background: white;
-  padding: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
+    /* NAVBAR */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      background: #ffffff;
+      padding: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
 
-nav a {
-  text-decoration: none;
-  color: #b00000;
-  font-weight: bold;
-  padding: 8px 14px;
-  border-radius: 20px;
-}
+    nav a {
+      text-decoration: none;
+      color: #b00000;
+      font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 20px;
+      transition: 0.3s;
+    }
 
-nav a:hover {
-  background: #b00000;
-  color: white;
-}
+    nav a:hover {
+      background: #b00000;
+      color: white;
+    }
 
-header {
-  background: linear-gradient(90deg, #b00000, #ff0000);
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
+    /* HEADER */
+    header {
+      background: linear-gradient(90deg, #b00000, #ff0000);
+      color: white;
+      text-align: center;
+      padding: 30px 15px;
+    }
 
-.container {
-  padding: 20px;
-}
+    header h1 {
+      margin: 0;
+      font-size: 26px;
+      letter-spacing: 2px;
+    }
 
-.card {
-  background: white;
-  border-radius: 14px;
-  padding: 16px;
-  margin-bottom: 14px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-}
+    header p {
+      margin-top: 8px;
+      font-size: 14px;
+      opacity: 0.9;
+    }
 
+    /* CONTENT */
+    .container {
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 18px;
+      margin-bottom: 14px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      color: #b00000;
+      font-size: 18px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 13px;
+      color: #777;
+    }
+  </style>
 </head>
 
 <body>
+
+  <!-- NAVBAR -->
   <nav>
-  <a href="index.html">Beranda</a>
-  <a href="struktur.html">Struktur</a>
-  <a href="galeri.html">Galeri</a>
+    <a href="index.html">Beranda</a>
+    <a href="struktur.html">Struktur</a>
+    <a href="galeri.html">Galeri</a>
   </nav>
 
-<header>
-  <!-- GANTI logo.png dengan nama file logo kamu -->
-  <img src="IMG_20260131_154912.png" alt="" class="logo">
+  <!-- HEADER -->
+  <header>
+    <h1>BRIKAPDUJA</h1>
+    <p>Pasukan Pengibar Bendera Sekolah</p>
+  </header>
 
-  <h1>BRIKAPDUJA</h1>
-  <p>Brigade Kp Dua Jaya</p>
-</header>
+  <!-- ISI -->
+  <div class="container">
+    <div class="card">
+      <h2>Selamat Datang</h2>
+      <p>
+        Website resmi Paskibra <b>BRIKAPDUJA</b>.
+        Website ini digunakan sebagai media informasi,
+        dokumentasi kegiatan, dan struktur organisasi.
+      </p>
+    </div>
 
-<div class="container">
-
-  <div class="card">
-    <h2>Tentang Kami</h2>
-    <p>
-      BRIKAPDUJA adalah organisasi Pasukan Pengibar Bendera
-      yang berfokus pada pembinaan disiplin, tanggung jawab,
-      kepemimpinan, dan semangat nasionalisme.
-    </p>
+    <div class="card">
+      <h2>Tentang Kami</h2>
+      <p>
+        BRIKAPDUJA adalah organisasi Pasukan Pengibar Bendera
+        yang menjunjung tinggi disiplin, tanggung jawab,
+        kepemimpinan, dan nasionalisme.
+      </p>
+    </div>
   </div>
 
-  <div class="card">
-    <h2>Visi</h2>
-    <p>
-      Membentuk anggota Paskibra yang disiplin, berkarakter,
-      berjiwa patriot, dan menjadi teladan di lingkungan sekolah.
-    </p>
-  </div>
-
-  <div class="card">
-    <h2>Misi</h2>
-    <ul>
-      <li>Meningkatkan kedisiplinan dan kekompakan anggota</li>
-      <li>Menanamkan rasa cinta tanah air</li>
-      <li>Melatih kepemimpinan dan tanggung jawab</li>
-      <li>Menjaga nama baik sekolah</li>
-    </ul>
-  </div>
-
-</div>
-
-<footer>
-  © 2026 BRIKAPDUJA • Brigade Kp 2 Jaya
-</footer>
+  <!-- FOOTER -->
+  <footer>
+    © 2026 BRIKAPDUJA • Paskibra Sekolah
+  </footer>
 
 </body>
 </html>
